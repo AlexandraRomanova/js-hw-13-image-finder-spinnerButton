@@ -48,6 +48,7 @@ function onLoadMore() {
     loadMoreBtn.disable();
     newApiService.fetchImages().then(data => {
         if (data.length === 0) {
+            loadMoreBtn.hide();
             return onFetchError();
         }
         loadMoreBtn.enable();
